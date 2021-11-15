@@ -51,7 +51,7 @@ const DomoList = function(props) {
                 <h3 className="domoName">Name: {domo.name}</h3>
                 <h3 className="domoAge">Age: {domo.age} </h3>
                 <h3 className="domoHeight">Height: {domo.height} Meters</h3>
-                <button onclick={()=>handleDeleteClick(domo._id)}>Delete me!</button>
+                <button onClick={()=>handleDeleteClick(domo._id)}>Delete me!</button>
             </div>
         );
     });

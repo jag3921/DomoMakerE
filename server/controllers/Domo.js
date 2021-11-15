@@ -42,7 +42,7 @@ const makerPage = (req, res) => {
 };
 
 const deleteDomo = (request, response) => {
-  
+  console.log("this deletes a domo");
 }
 const getDomos = (request, response) => {
   const req = request;
@@ -60,3 +60,4 @@ const getDomos = (request, response) => {
 module.exports.makerPage = makerPage;
 module.exports.getDomos = getDomos;
 module.exports.make = makeDomo;
+module.exports.deleteDomo = deleteDomo;
