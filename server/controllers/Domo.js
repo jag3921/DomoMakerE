@@ -45,12 +45,11 @@ const deleteDomo = (request, response) => {
   const req = request;
   const res = response;
 
-  Domo.DomoModel.findOneAndRemove({_id: req.session.account._id}, (err, deletedDomo) => {
+  Domo.DomoModel.findOneAndRemove({_id: req.session.domo._id}, (err, deletedDomo) => {
     if (err) {
       return res.status(400).json({ error: 'An error occurred' });
     }
-
-    return res.json({ domos: docs});
+    console.log("Domo deleted");
   })
   
 };
