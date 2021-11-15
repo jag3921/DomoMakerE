@@ -41,6 +41,9 @@ const makerPage = (req, res) => {
   });
 };
 
+const deleteDomo = (request, response) => {
+  
+}
 const getDomos = (request, response) => {
   const req = request;
   const res = response;
