@@ -42,18 +42,16 @@ const makerPage = (req, res) => {
 };
 
 const deleteDomo = (request, response) => {
-  let req = request;
-  let res = response;
-  const id = req.session.account.id;
+  const req = request;
+  const res = response;
+  const { id } = req.session.account;
 
   return Domo.DomoModel.findByIdAndDelete(id)
-  .then(result => {
-    res.json({redirect: '/maker'})
-  })
-  .catch(err => {
-    return res.status(400).json({error: 'An error occured'})
-  })
-}
+    .then((result) => {  // eslint-disable-line
+      res.json({ redirect: '/maker' });
+    })
+    .catch((err) => res.status(400).json({ error: 'An error occured' }));  // eslint-disable-line
+};
 const getDomos = (request, response) => {
   const req = request;
   const res = response;
