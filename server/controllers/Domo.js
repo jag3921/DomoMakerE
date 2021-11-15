@@ -45,7 +45,7 @@ const deleteDomo = (request, response) => {
   const req = request;
   const res = response;
 
-  const data = req.body;
+  const data = req.body.domoId;
   console.log(data);
   Domo.DomoModel.findByIdAndRemove(`${data}`, (error, deletedDomo) => {
     if (error) {
