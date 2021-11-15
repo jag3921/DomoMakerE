@@ -42,7 +42,17 @@ const makerPage = (req, res) => {
 };
 
 const deleteDomo = (request, response) => {
-  console.log("this deletes a domo");
+  let req = request;
+  let res = response;
+  const id = req.session.account.id;
+
+  return Domo.DomoModel.findByIdAndDelete(id)
+  .then(result => {
+    res.json({redirect: '/maker'})
+  })
+  .catch(err => {
+    return res.status(400).json({error: 'An error occured'})
+  })
 }
 const getDomos = (request, response) => {
   const req = request;
