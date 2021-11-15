@@ -45,7 +45,7 @@ const deleteDomo = (request, response) => {
   const req = request;
   const res = response;
 
-  const data = req.body.data;
+  const data = req.body.key;
   Domo.DomoModel.findByIdAndRemove(`${data}`, (error, deletedDomo) => {
     if (error) {
       return res.status(400).json({ error: 'An error occurred' });
