@@ -45,11 +45,14 @@ const deleteDomo = (request, response) => {
   const req = request;
   const res = response;
 
-   const id = req.data;
-   if (err) {
-    return res.status(400).json({ error: 'An error occurred' });
-   }
-   return res.json({id: id});
+  Domo.DomoModel.findOneAndRemove({_id: req.session.account._id}, (err, deletedDomo) => {
+    if (err) {
+      return res.status(400).json({ error: 'An error occurred' });
+    }
+
+    return res.json({ domos: docs});
+  })
+  
 };
 const getDomos = (request, response) => {
   const req = request;
