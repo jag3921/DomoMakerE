@@ -16,7 +16,7 @@ const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
 // const dbURL = process.env.MONGODB_URI || 'mongodb://localhost/DomoMaker';
 
-const dbURL = 'mongodb+srv://jacobUser:jacobPassword0@cluster0.tzvux.mongodb.net/DomoMaker';
+const dbURL = 'mongodb+srv://jacobUser:jacobPassword0@cluster0.tzvux.mongodb.net/DomoMakerE';
 mongoose.connect(dbURL, (err) => {
   if (err) {
     //   console.log('Could not connect to database');

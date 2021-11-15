@@ -45,8 +45,9 @@ const LoginWindow = (props) => {
             <input id="pass" type="password" name="pass" placeholder="password"/>
             <input type="hidden" name="_csrf" value={props.csrf}/>
             <input className="formSubmit" type="submit" value="Sign in" />
-
+            <h3>Test</h3>
         </form>
+        
     );
 }
 
