@@ -46,7 +46,10 @@ const deleteDomo = (request, response) => {
   const res = response;
 
    const id = req.data;
-   console.log(id);
+   if (err) {
+    return res.status(400).json({ error: 'An error occurred' });
+   }
+   return res.json({id: id});
 };
 const getDomos = (request, response) => {
   const req = request;
