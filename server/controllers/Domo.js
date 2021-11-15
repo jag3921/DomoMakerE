@@ -44,15 +44,9 @@ const makerPage = (req, res) => {
 const deleteDomo = (request, response) => {
   const req = request;
   const res = response;
-/*
-  Domo.DomoModel.findOneAndRemove({name: 'rocky'}, (err, deletedDomo) => {
-    if (err) {
-      return res.status(400).json({ error: 'An error occurred' });
-    }
-    console.log("Domo deleted");
-  })
- */
-  Domo.DomoModel.findByIdAndRemove(`61920b6969b123453c88eefe`, (error, deletedDomo) => {
+
+  const data = req.body.data;
+  Domo.DomoModel.findByIdAndRemove(`${data}`, (error, deletedDomo) => {
     if (error) {
       return res.status(400).json({ error: 'An error occurred' });
     }

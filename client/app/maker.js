@@ -91,9 +91,10 @@ const getToken = () => {
 const handleDeleteClick = (domoid) => {
     const domoId = domoid;
     const _csrf = document.querySelector('#csrfVal') // use `document.querySelector()` to get this value
-    const deleteData = `_csrf=${_csrf.value}&domoId=${domoId}`;
+  //  const deleteData = `_csrf=${_csrf.value}&domoId=${domoId}`;
+    const sendID = domoid;
     // use this helper - sendAjax(type, action, data, success) 
-    sendAjax('DELETE', '/delete-domo', deleteData, loadDomosFromServer);
+    sendAjax('DELETE', '/delete-domo', sendID, loadDomosFromServer);
   };
 
 $(document).ready(function() {
