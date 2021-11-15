@@ -44,13 +44,9 @@ const makerPage = (req, res) => {
 const deleteDomo = (request, response) => {
   const req = request;
   const res = response;
-  const { id } = req.session.account;
 
-  return Domo.DomoModel.findByIdAndDelete(id)
-    .then((result) => {  // eslint-disable-line
-      res.json({ redirect: '/maker' });
-    })
-    .catch((err) => res.status(400).json({ error: 'An error occured' }));  // eslint-disable-line
+   const id = req.data;
+   console.log(id);
 };
 const getDomos = (request, response) => {
   const req = request;
