@@ -44,14 +44,14 @@ const makerPage = (req, res) => {
 const deleteDomo = (request, response) => {
   const req = request;
   const res = response;
-
+// Get the domoId from the react code
   const data = req.body.domoId;
-  console.log(data);
+// Remove domo by its id
   Domo.DomoModel.findByIdAndRemove(`${data}`, (error, deletedDomo) => {
     if (error) {
       return res.status(400).json({ error: 'An error occurred' });
     }
-    console.log(deletedDomo);
+    return {deletedDomo: deletedDomo};
   })
   
 };
@@ -63,7 +63,6 @@ const getDomos = (request, response) => {
     if (err) {
       return res.status(400).json({ error: 'An error occurred' });
     }
-
     return res.json({ domos: docs });
   });
 };
